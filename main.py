@@ -11,6 +11,7 @@ LOGO = ("""
             By sarsatra https://github.com/sarsatra/DiscordSploit
             'help' for help
 """)
+
 def shell():
     token = ''
     channelid = ''
