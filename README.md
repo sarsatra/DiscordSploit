@@ -1,6 +1,6 @@
 # DiscordSploit
-Penetration testing tool using discord servers for the server
-
+* Penetration testing tool using discord servers
+* Now available Windows only
 ## Installation
 * Clone the repo
 ```
@@ -18,8 +18,8 @@ python main.py
 ## Photos
 ![image](imgs/ss.png)
 ## Terms of Use
-* THIS PROJECT IS FOR EDUCATIONAL PURPOSES ONLY
-* THE AUTHOR OF THE PROJECT IS NOT RESPONSIBLE FOR ANY CONSEQUENCES FROM THIS PROJECT
+* **THIS PROJECT IS FOR EDUCATIONAL PURPOSES ONLY**
+* **THE AUTHOR OF THE PROJECT IS NOT RESPONSIBLE FOR ANY CONSEQUENCES FROM THIS PROJECT**
 
 ## Credits
 

@@ -69,7 +69,7 @@ bot.run('{token}')
             """)
        
             file.close()
-            print("discordsploit # Creating exe with PyInstaller")
+            print("Creating exe with PyInstaller")
             proc = subprocess.call(["pyinstaller", "--onefile", f"{name}.pyw"], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, shell=False)
             print("Exe created in dist folder")
         else:
