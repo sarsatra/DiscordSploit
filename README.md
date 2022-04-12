@@ -10,7 +10,7 @@ git clone https://github.com/sarsatra/DiscordSploit.git
 ```
 pip install -r requirements.txt
 ```
-* Create a discord bot and add it to your server then get its token
+* Create a discord bot and add it to your server then get its token and channelid
 ## Usage
 ```
 python main.py
