@@ -1,6 +1,6 @@
 # DiscordSploit
-Penetration testing tool using discord servers for the server
-Now available Windows only
+* Penetration testing tool using discord servers for the server
+* Now available Windows only
 ## Installation
 * Clone the repo
 ```
