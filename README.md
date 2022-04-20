@@ -26,4 +26,4 @@ python main.py
 
 * [PyInstaller](https://github.com/pyinstaller) - The python compiler module was based on his script **PyInstaller**. 
 * [Rapptz](https://github.com/Rapptz) - The discord.py was based on his script **discord.py**. 
-
+* [python-pillow](https://github.com/python-pillow/Pillow) - The sscreenshot was based on his script **Pillow**.
