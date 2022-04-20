@@ -46,6 +46,7 @@ def shell():
             file.write(f"""
 import discord
 import subprocess
+import io
 from discord.ext import commands
 from discord.ext.commands import bot
 from PIL import ImageGrab
